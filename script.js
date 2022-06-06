@@ -3,6 +3,7 @@ const [cardMain, flag, nameCountry, popula, region, capital] =
 className.map(classItem => {
     return document.querySelector(classItem);
 })
+const loading = document.querySelector('.loading');
 
 let apiCountry = 
 fetch('https://restcountries.com/v3.1/all')
@@ -12,7 +13,7 @@ fetch('https://restcountries.com/v3.1/all')
 .then((data) => {
     console.log(data)
     let dataEx = data.map((arr) => {
-        return [arr.flags.svg ,arr.name.official, arr.population, arr.region, arr.capital]
+        return [arr.flags.svg ,arr.name.common, arr.population, arr.region, arr.capital]
     })
     let html = [];
     console.log(dataEx)
@@ -30,5 +31,9 @@ fetch('https://restcountries.com/v3.1/all')
                     </div>
                 </div>`);
     }
+    return html;
+})
+.then(html => {
+    // loading.className.add('hide');
     cardMain.innerHTML = html.join('');
 })
