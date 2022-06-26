@@ -16,9 +16,9 @@
   function loadData(dataEx) {
     let html = [];
     for (let i = 0; i < dataEx?.length; i++) {
-      html.push(`<div class="country-card dark-theme-light1" value="${dataEx[i][1]}">
+      html.push(`<div class="country-card dark-theme-light" value="${dataEx[i][1]}">
                       <img src="${dataEx[i][0]}" alt="" class="flag">
-                      <div class="infor">
+                      <div class="infor infor-dark">
                           <h3 class="name-country">${dataEx[i][1]}</h3>
                           <div class="info-country">
                               <p class="popular"> <strong>Population:</strong> ${dataEx[i][2]}
@@ -36,7 +36,7 @@
     let html = [];
     for (let i = 0; i < detal?.length; i++) {
       html.push(`<img src="${detal[i][0]}" alt="" class="detal-flag">
-      <div class="infor">
+      <div class="infor dark-theme-light">
           <h3 class="name-country info-country-detal">${detal[i][1]}</h3>
           <div class="info-country-detal" style="margin-top:2rem;">
               <p class="capital"> <strong> Native Name: </strong>${detal[i][2]}</p>
