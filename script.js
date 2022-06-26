@@ -120,7 +120,7 @@
     let CountryCard = document.querySelectorAll(".country-card");
     let nameCountry;
     
-    for(let i=0 ; i<number; i++){
+    for(let i=0 ; i< number; i++){
       CountryCard[i].onclick = function() {
         nameCountry = CountryCard[i].attributes.value.textContent
         detalCountry(nameCountry);
