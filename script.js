@@ -123,7 +123,7 @@
         detalCountry(nameCountry);
         detal.classList.remove('hide');
         detal.classList.add('hide-detalt');
-        cardMain.classList.add('disable');
+        // cardMain.classList.add('disable');
       }
     }
   }
@@ -165,5 +165,5 @@ let btnBack = document.querySelector('.btn-back');
 btnBack.onclick = function() {
     detal.classList.remove('hide-detal');
     detal.classList.add('hide');
-    cardMain.classList.remove('disable')
+    // cardMain.classList.remove('disable')
 }

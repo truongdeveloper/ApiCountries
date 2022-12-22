@@ -108,6 +108,7 @@ input{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 90%;
     overflow: hidden;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 .country-card:hover{
@@ -171,6 +172,7 @@ h3{
 .close-info {
     font-size: 30px;
     padding: 20px;
+    cursor: pointer;
 }
 .detal-country {
     color: black;
@@ -186,12 +188,14 @@ h3{
     margin: auto auto; 
     z-index: 2;
     border-radius: 20px;
+    overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: all 0.6s ease;
 }
 .btn-back{
     display: block;
-    text-align: left;
+    text-align: center;
+    background-color: rgb(149, 149, 149);
 }
 .btn-back > button{
     margin: 1rem 0; 
@@ -238,6 +242,20 @@ h3{
         grid-template-columns: auto auto;
         align-items: stretch;
     }
+    .info-content {
+        display: flex;
+        align-items: center;
+        margin: 30px;
+    }
+    .detal-flag{
+        /* flex-grow: 1; */
+        margin: 1rem;
+        display: block;
+        margin: 0 auto;
+    }
+    .info {
+        flex-grow: 1;
+    }
 }
 
 @media  screen and (min-width: 1200px) {
@@ -249,18 +267,5 @@ h3{
         grid-template-columns: auto auto auto;
         align-items: stretch;
     }
-    .info-content {
-        display: flex;
-        align-items: center;
-        margin-bottom: 30px;
-    }
-    .detal-flag{
-        /* flex-grow: 1; */
-        margin: 1rem;
-        display: block;
-        margin: 0 auto;
-    }
-    .info {
-        flex-grow: 1;
-    }
+
 }
