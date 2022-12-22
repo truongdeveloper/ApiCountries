@@ -16,7 +16,7 @@
   function loadData(dataEx) {
     let html = [];
     for (let i = 0; i < dataEx?.length; i++) {
-      html.push(`<div class="country-card dark-theme-light" value="${dataEx[i][1]}">
+      html.push(`<div class="country-card dark-theme-light" data-aos="zoom-in" value="${dataEx[i][1]}">
                       <img src="${dataEx[i][0]}" alt="" class="flag">
                       <div class="infor infor-dark">
                           <h3 class="name-country">${dataEx[i][1]}</h3>
@@ -35,34 +35,31 @@
   function loadDetal(detal) {
     let html = [];
     for (let i = 0; i < detal?.length; i++) {
-      html.push(`<img src="${detal[i][0]}" alt="" class="detal-flag">
-      <div class="infor dark-theme-light">
-          <h3 class="name-country info-country-detal">${detal[i][1]}</h3>
-          <div class="info-country-detal" style="margin-top:2rem;">
-              <p class="capital"> <strong> Native Name: </strong>${detal[i][2]}</p>
+      html.push(`
+        <div class="info-content">
+            <div class="detal-flag">
+                <img src="${detal[i][0]}" alt="" class="detal-flag-img">
+            </div>
+            <div class="infor">
+                <h3 class="name-country info-country-detal">${detal[i][1]}</h3>
+                <div class="info-country-detal" style="margin-top:2rem;">
+                    <p class="capital"> <strong> Native Name: </strong>${detal[i][2]}</p>
 
-              <p class="popular"> <strong>Population:</strong> ${detal[i][3]}
-              </p>
-              <p class="region"> <strong>Region:</strong> ${detal[i][4]}</p>
-              <p class="capital"> <strong> Sub Region: </strong> ${detal[i][4]}</p>
+                    <p class="popular"> <strong>Population:</strong> ${detal[i][3]}
+                    </p>
+                    <p class="region"> <strong>Region:</strong> ${detal[i][4]}</p>
+                    <p class="capital"> <strong> Sub Region: </strong> ${detal[i][4]}</p>
 
-              <p class="capital"> <strong> Capital:</strong> ${detal[i][5]}</p>
-          </div>
-          <div class="info-country-detal" style="margin-top:2rem;">
-              <p class="capital"> <strong> Top Level Domain: </strong> ${detal[i][6]}</p>
-              <p class="region"> <strong>Currencies: </strong>${detal[i][7]}</p>
-              <p class="capital"> <strong> Languages: </strong> ${detal[i][8]}</p>
-          </div>
-          <div class="info-country-detal" style="margin-top:2rem ;">
-              <h4 style="font-size: 18px;">Boder Countries: </h4>
-              <div class="border-country">
-                  <div class="boder-country-box">
-                      Lao
-                  </div>
-              </div>
-
-          </div>
-      </div>`);
+                    <p class="capital"> <strong> Capital:</strong> ${detal[i][5]}</p>
+                </div>
+                <div class="info-country-detal" style="margin-top:2rem;">
+                    <p class="capital"> <strong> Top Level Domain: </strong> ${detal[i][6]}</p>
+                    <p class="region"> <strong>Currencies: </strong>${detal[i][7]}</p>
+                    <p class="capital"> <strong> Languages: </strong> ${detal[i][8]}</p>
+                </div>
+            </div>
+        </div>`
+      );
     }
     detalInfo.innerHTML = html.join("");
   }
@@ -115,7 +112,7 @@
       cardClick(data.length)
     })
 
-  // Tạo sự kiện Onclick cho các thẻ được tạo ra
+  // Tạo sự kiện onClick cho các thẻ được tạo ra
   function cardClick(number) {
     let CountryCard = document.querySelectorAll(".country-card");
     let nameCountry;
@@ -124,8 +121,9 @@
       CountryCard[i].onclick = function() {
         nameCountry = CountryCard[i].attributes.value.textContent
         detalCountry(nameCountry);
-        detal.classList.add('hide-detal');
-        cardMain.classList.add('hide')
+        detal.classList.remove('hide');
+        detal.classList.add('hide-detalt');
+        cardMain.classList.add('disable');
       }
     }
   }
@@ -166,5 +164,6 @@ let detal = document.querySelector('.detal-country');
 let btnBack = document.querySelector('.btn-back');
 btnBack.onclick = function() {
     detal.classList.remove('hide-detal');
-    cardMain.classList.remove('hide')
+    detal.classList.add('hide');
+    cardMain.classList.remove('disable')
 }

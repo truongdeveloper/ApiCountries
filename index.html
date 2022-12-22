@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/PNG-0000002037-png-hanh-tinh-vu-tru.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Countries-lading-page</title>
 </head>
@@ -16,7 +16,6 @@
         <span class="title">Where is the world?</span>
         <span class="theme">
             <i class="fa-solid fa-moon"></i>
-            <i class="fa-solid fa-sun"></i>
         </span>
     </header>
     <main>
@@ -35,68 +34,29 @@
             </select>
         </div>
         <div class="card-main">
-            <!-- <div class="country-card">
-                <img src="assets/img/vn.svg" alt="" class="flag">
-                <div class="infor">
-                    <h3 class="name-country">Viet Nam</h3>
-                    <div class="info-country">
-                        <p class="popular"> <strong>Population:</strong> 97.000.000
-                        </p>
-                        <p class="region"> <strong>Region:</strong> Asia</p>
-                        <p class="capital"> <strong> Capital:</strong> Hà Nội</p>
-                    </div>
-                </div>
-            </div> -->
             <div class="loading" style="text-align:center ;">
                 <i class="fa-solid fa-spinner"></i>
             </div>
         </div>
-        <div class="detal-country dark-theme-light">
-            <div class="btn-back dark-theme-light">
-                <button style="padding: 0.4rem;">
-                    <i class="fa-solid fa-arrow-left-long"></i>
-                    <span>Back</span>
-                </button>
+        <div class="detal-country hide">
+            <div class="btn-back">
+                <i class="fa-regular fa-circle-xmark close-info"></i>
             </div>
-            <div class="detal-info dark-theme-light">
-
-                <img src="assets/img/vn.svg" alt="" class="detal-flag">
-                <div class="infor">
-                    <h3 class="name-country info-country-detal">Viet Nam</h3>
-                    <div class="info-country-detal" style="margin-top:2rem;">
-                        <p class="capital"> <strong> Native Name: </strong> Hà Nội</p>
-
-                        <p class="popular"> <strong>Population:</strong> 97.000.000
-                        </p>
-                        <p class="region"> <strong>Region:</strong> Asia</p>
-                        <p class="capital"> <strong> Sub Region: </strong> Hà Nội</p>
-
-                        <p class="capital"> <strong> Capital:</strong> Hà Nội</p>
-                    </div>
-                    <div class="info-country-detal" style="margin-top:2rem;">
-                        <p class="capital"> <strong> Top Level Domain: </strong> Hà Nội</p>
-                        <p class="region"> <strong>Currencies: </strong> Asia</p>
-                        <p class="capital"> <strong> Languages: </strong> Tiếng Việt</p>
-                    </div>
-                    <div class="info-country-detal" style="margin-top:2rem ;">
-                        <h4 style="font-size: 18px;">Boder Countries: </h4>
-                        <div class="border-country">
-                            <div class="boder-country-box">
-                                Lao
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="detal-info">
             </div>
         </div>
-        
-
     </main>
     <footer>
 
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            delay: 100,
+            duration: 500,
+        });
+      </script>
 </body>
 
 </html>

@@ -108,10 +108,10 @@ input{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 90%;
     overflow: hidden;
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
 }
 .country-card:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 18px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .infor{
     padding: 1rem 0 2rem;
@@ -137,66 +137,94 @@ h3{
 /* ====== Loading ====== */
 .loading > i{
     font-size: 32px;
-    text-align: center;
+    text-align: end;
     animation: loading 1400ms infinite;
 }
 @keyframes loading{
     from{ transform: rotate(0deg);}
     to{ transform: rotate(360deg);}
 }
-.hide{
+.disable {
     display: none;
 }
-/* ======DETAL COUNTRY===== */
-.detal-country {
-    position: absolute;
-    top: 0rem;
-    background-color: #ffff;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    right: -1000%;
-    z-index: 2;
-    transition: all 0.6s ease;
+.hide{
+    visibility: hidden;
+    opacity: 0;
 }
+
+/* ======DETAL COUNTRY===== */
+.detal-main {
+    position: relative;
+}
+.overlay {
+    position: fixed;
+    background-color: rgb(65, 65, 65);
+}
+.detal-info {
+
+}
+
 .hide-detal{
-    right: 0;
+    visibility: visible;
+    opacity: 1;
+}
+.close-info {
+    font-size: 30px;
+    padding: 20px;
+}
+.detal-country {
+    color: black;
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: fit-content;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    background-color: #ffff;
+    flex-direction: column;
+    margin: auto auto; 
+    z-index: 2;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.6s ease;
 }
 .btn-back{
     display: block;
-    /* margin-left: 1.3rem; */
-    width: 85%;
-    margin: 0 auto;
+    text-align: left;
 }
 .btn-back > button{
     margin: 1rem 0; 
 }
 .detal-flag{
-    width: 85%;
+    width: 65%;
     margin-left: 1.3rem;
     display: block;
     margin: 0 auto;
+    overflow: hidden;
+}
+.detal-flag > img {
+    width: 100%;
 }
 .info-country-detal{
     display: block;
     width: 85%;
     margin: 0 auto;
     margin-top: 1rem;
+    color: black;
 }
 .info-country-detal > p{
     margin-top: 0.8rem;
+    color: black;
+}
+.info-country-detal strong{
+    color: black;
 }
 
 /* Dark Mode */
-.theme{
-
-}
 .hide::before{
     display: none;
 }
-/* .fa-moon::before{
-    display: none;
-} */
 .theme-input:checked ~ .fa-moon::before{
     font-size: 200px;
 }
@@ -220,5 +248,19 @@ h3{
         display: grid;
         grid-template-columns: auto auto auto;
         align-items: stretch;
+    }
+    .info-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .detal-flag{
+        /* flex-grow: 1; */
+        margin: 1rem;
+        display: block;
+        margin: 0 auto;
+    }
+    .info {
+        flex-grow: 1;
     }
 }
